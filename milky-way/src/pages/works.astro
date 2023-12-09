@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+const allResearch = await Astro.glob('../pages/Research/*.md');
+const allAI = await Astro.glob('../pages/AI/*.md');
+const allDS = await Astro.glob('../pages/DS/*.md');
+const allSWE = await Astro.glob('../pages/SWE/*.md');
+const pageTitle = "Works";
+---
+<Layout pageTitle={pageTitle}>
+    <div class="gif">
+        <img width="300" height="259" alt="RaccoonLaptopGif" src="/laptop.webp"/>
+    </div>
+    <h2>Competitions and Research</h2>
+    <ul role="list" class="link-card-grid">
+        {allResearch.map((card) => <Card 
+            url={card.url} 
+            image={card.frontmatter.image.url} 
+            title={card.frontmatter.title} 
+            body={card.frontmatter.description}
+        />)}
+    </ul>
+    <h2>Artificial Intelligence</h2>
+    <ul role="list" class="link-card-grid">
+        {allAI.map((card) => <Card 
+            url={card.url} 
+            image={card.frontmatter.image.url} 
+            title={card.frontmatter.title} 
+        />)}
+    </ul>
+    <h2>Data Science and Data Analytics</h2>
+    <ul role="list" class="link-card-grid">
+        {allDS.map((card) => <Card 
+            url={card.url} 
+            image={card.frontmatter.image.url} 
+            title={card.frontmatter.title} 
+        />)}
+    </ul>
+    <h2>Software Engineering</h2>
+    <ul role="list" class="link-card-grid">
+        {allSWE.map((card) => <Card 
+            url={card.url} 
+            image={card.frontmatter.image.url} 
+            title={card.frontmatter.title} 
+        />)}
+    </ul>
+</Layout>

@@ -1,0 +1,19 @@
+---
+const { project_name, project_img, github_link } = Astro.props;
+---
+
+<div class="rounded-lg bg-dark_gold group p-1 relative transform transition duration-200 hover:cursor-grab hover:scale-105">
+  <a
+    href={github_link}
+    class="flex flex-col font-mono text-black text-bold rounded-lg"
+  >
+    <div>
+      <p
+        class="absolute w-full inset-x-0 bottom-0 bg-dark_gold text-center leading-relaxed rounded-b-lg"
+      >
+        {project_name}
+    </p>
+    </div>
+    <img width="226" height="127" src={project_img} class="card-img" alt="ProjectImage" /></a
+  >
+</div>
