@@ -63,7 +63,7 @@ html{background-color:#1e1e2e;color:#fdebf3}body{max-width:540px;margin:0 auto;t
         element.classList.toggle("light");
 
         const isLight = element.classList.contains("light");
-        localStorage.setItem("theme", isLight ? "light" : "dark");
+        localStorage.setItem("theme", isLight ? "light" : "dark"); 
     }
 
     document.getElementById("themeToggle").addEventListener("click", handleToggleClick);
