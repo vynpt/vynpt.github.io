@@ -77,9 +77,10 @@ html{background-color:#1e1e2e;color:#fdebf3}body{max-width:540px;margin:0 auto;t
         localStorage.setItem("theme", isLight ? "light" : "dark");
 
 	// Send event to GA4
-	gtag('event', 'theme_mode', {
-	     'event_category': 'theme',
-	     'event_label': isLight ? 'light_mode' : 'dark_mode'});
+	gtag('event', 'theme_toggle', {
+	        'event_category': 'theme',
+	        'event_label': 'toggle_clicked',
+	        'theme_mode': isLight ? 'light' : 'dark' });
     }
 
     document.getElementById("themeToggle").addEventListener("click", handleToggleClick);
